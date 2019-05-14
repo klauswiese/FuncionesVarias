@@ -1,0 +1,6 @@
+# Comando para proyectar de 32616 (source) a 4326 (target)
+gdalwarp -s_srs EPSG:32616 -t_srs EPSG:4326 -of GTiff /home/wiese/1_PROYECTOS/LANDSAT_TM/Visible_1 /home/wiese/1_PROYECTOS/LANDSAT_TM/Visible_1_geogra.tif
+
+#Link externo a cualquier ráster que lea GDAL
+r.external ~/1_PROYECTOS/LANDSAT_TM/Visible_1 out=Landsat1
+

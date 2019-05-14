@@ -1,0 +1,36 @@
+#De ráster a véctor, pasar la capa rios en ráster a un vector, primero se hace un adelgazamiento(thin) y este se pasa a vecto.
+r.thin streams_derived out=streams_derived_t
+r.to.vect streams_derived_t out=streams_derived_t
+
+#superficies a isolíneas (r.contour), areas a polígonos (r.to.vect), líneas ráster a linéas véctor (r.thin + r.to.vect) y v.digit para vectorización manual
+
+#Polígono ráster a véctor, asignando el valor de area, la bandera -s permite suavizar las líneas de el área y la bandera -v permite usar los valroes de el #ráster como categorias.
+r.to.vect -s basin_50K out=basin_50K feature=area
+
+r.to.vect -sv basin_50K out=basin_50val feature=area
+
+#Ráster a puntos, depende de la resolucón de la región
+r.to.vect elev_ned_30m out=elev_ned50m_pts feature=point
+
+#Ráster a punto y el atributo de elevación es en tercera dimensión
+ r.to.vect -zb elev_ned_30m out=elev_ned50m_ptsz feature=point
+
+#Muestreo aleatorio de puntos en ua capa ráster dando como resultado un véctor y un ráster (6000 muestras)
+r.random elev_ned_30m rast=elev_rand vect=elev_randpts n=6000 
+
+#Generar isolíneas cada 10mtsa partir de el MDE 
+r.contour elevation out=elev_contour_10m step=10
+
+# Curvas cada 3mts con mínimo de 55 y máximo 154
+r.contour elevation out=elev_contour_3m step=3 min=55 max=154
+
+# Resampleo de píxeles por cambios en tamañoa la resolución de la región definida
+r.resamp.interp landuse96_28m out=landuse96_10m_nn met=nearest
+
+# interpolación IDW y SPLINE
+r.surf.idw, r.surf.rst, v.surf.rst
+
+
+
+
+

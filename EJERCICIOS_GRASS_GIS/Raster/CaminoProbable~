@@ -1,0 +1,14 @@
+#Crear Punto de interés (a donde se quiere llegar)
+echo "566720 1553727 1"|v.in.ascii out=cebus_jamastran fs=space
+
+#Crear superfie de impedancia
+ r.cost -k srtm_90m out=cebus_cost coor=566720,1553727
+
+#Visualizar el costo de llegar al punto de interés de varias localidades
+v.out.ascii sitios_interes fs=' ' | r.what cebus_cost
+
+#Crear camino mas simple según superficie de impedancia hacia el punto de interés
+r.drain -n cebus_cost out=ruta_sencilla coor=527179,1469774
+
+
+

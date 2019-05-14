@@ -1,0 +1,26 @@
+
+#Desplegar atributos en un mapa de vector
+d.vect -c census_wake2000 disp=shape,attr attrcol=FIPSSTCO size=5 lcol=black
+
+#Generar visualizaciones de la info SIG en un monitor y en otro monitor  una leyenda
+#Poligono de el censo de wake, 6 intervalos de calsificación con paleta de color de amarillo a cyan
+ d.vect.thematic -l censusblk_swwake column=HOUSEHOLDS nint=6 color=yellow-cyan 
+
+
+#Capa de puntos clasificada en seis intervalos, con tema de despligue en crecieminto de tamaño de puntos gradualmente
+d.vect.thematic -l schools_wake column=CAPACITYTO type=point size=10 nint=6 themetype=graduated_points
+
+# Despliegue de gráfico en función de un atributo de una capa
+d.vect.chart -c precip_30ynormals ctype=bar size=80 scale=0.6 column=jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec color=cyan,cyan,yellow,yellow,yellow,green,green,green,blue,blue,blue,cyan
+
+#Desplegar información referente a metadatos básico
+v.info schools_wake
+
+#Desplegar información referente a metadatos, si s eusa la bandera -c se obtiene también los atributos de la capa
+v.info -c schools_wake
+
+#Cambiar algún metadato
+v.support myvectmap organization="OSGeo labs"
+
+
+

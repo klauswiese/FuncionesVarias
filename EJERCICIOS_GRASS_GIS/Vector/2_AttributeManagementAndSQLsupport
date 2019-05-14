@@ -1,0 +1,7 @@
+#Manual para manejo de bases de datos en GRASS GIS
+g.manual databaseintro
+
+#Para ver rápidamente la tabla de atributos de una capa
+v.db.select roadsmajor
+
+#

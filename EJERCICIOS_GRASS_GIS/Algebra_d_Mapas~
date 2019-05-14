@@ -1,0 +1,18 @@
+#Ejemplo de la sintaxis de una expresión usando r.mapcalc, la expresión s epone entre comillas o se establece un END si se quiere hacer varias operaciones. en #este ejercicio en específico se adiciona 123 niveles digitales a cada pixel de una ortho imagen.
+r.mapcalc "img_int = ortho_2001_t792_1m + 123"
+
+#Cálculo de NDVI usando bandas de el Landsat Thematic Mapper (TM) y asignando un facto de 1.0 para que los resultados sean números flotantes o de doble #presición, de no hacerse lso resultados serán en enteros...
+r.mapcalc "ndvi1 = 1.0 * (tm4 - tm3) / (tm4 + tm3)"
+r.mapcalc "ndvi1 = float (tm4 - tm3) / (tm4 + tm3)"
+
+#Promedio ponderado entre dos capas de elevaciones
+r.mapcalc "elev_avg = (5. * elev_ned_30m + 3. * elev_srtm_30m)/8.
+
+#Usar el condicional IF en el algebra de mapas.
+r.mapcalc "calcmap = if(landclass96 == 1, 1, 2)" # saca todo lo qu es 1 con valos 1 y el resto con valor 2
+r.mapcalc "calcmap = if(landclass96 != 1, 1, 2)" # saca todo lo diferente a 1 con valor 1 y el resto 2 (todos los 1)
+r.mapcalc "calcamap3 = if(landclass96 >= 2, 1, 2)" # asigan el valor 1 a todos las valores superiores o iguales a 2, todos los demas son 2 (todos los 1)
+r.mapcalc "calcmap5a = if(landclass96 == 1, 1, 0) + if(landclass96 == 2, 2, 0)" # Uso de múltiples If en el mismo comando
+r.mapcalc "clacmap6 = if(landclass96 == 1 || landclass96 == 2,landclass96, 0)" # uso de or ( || ) con el condicional If para asignar valores
+r.mapcalc "calcmap2 if(landclass96 >=3 && landclass96 <= 5, 1, 2)"# asigna le valor de 1 a los 3,4 y 5, el resto es 2.
+r.mapcalc "elev_avg_nonulls = elev_ned_30m + if(isnull(elevacionklaus), 0, elev_srtm_30m - elev_ned_30m)"
