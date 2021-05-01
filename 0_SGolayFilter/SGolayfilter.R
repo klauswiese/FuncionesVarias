@@ -16,12 +16,14 @@ library(snow)
 #Cargar datos
 imagen <- stack("prueba2")
 
-# Calculate the number of cores
+# Número de núcleos
 no_cores <- detectCores() - 2
 
-#Function for filtering time series. Savitzky-Golay. m=differentiation order,p=polynomial order,w=window size (odd).
+# Función Savitzky-Golay para filtrar series de timepo 
+# m=differentiation order,p=polynomial order,w=window size (odd)
+
 SpatialSGfilter <- function (TimeSeries, m, p, w, cores=2){
-  beginCluster(cores, type = "SOCK")
+  beginCluster(cores, type = "SOCK") #socket for one machine
   cl <- getCluster()
   clusterExport(cl, list('TimeSeries', 'm', 'p', 'w'), envir = environment())
   filt <- clusterR(TimeSeries,calc,args=list(fun=function(x) prospectr::savitzkyGolay(x,m,p,w)))
@@ -29,10 +31,12 @@ SpatialSGfilter <- function (TimeSeries, m, p, w, cores=2){
   return(filt)
 }
 
+#prueba de función
 ini <- Sys.time()
 imagefilt3 <- SpatialSGfilter(TimeSeries=imagen,m=2,p=3,w=5,cores=1)
 print(Sys.time() - ini)
 
+#Guardar resultado
 writeRaster(imagenfilt, filename="imagenfilt.tif")
 
 
