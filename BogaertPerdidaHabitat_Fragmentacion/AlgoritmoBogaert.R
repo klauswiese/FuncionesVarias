@@ -6,14 +6,14 @@
 ########################################################################################
 
 #Definir directorio de trabajo
-#setwd("~/R/0_Fragmentacion/")
+setwd("~/R/0_Fragmentacion/")
 
 #Antes (Momento inicial)
 n0 <- 2     #Número de parchos 
 a0 <- 1250  #Área 
 p0 <- 1200  #Perimetro
 
-#Despues (Momento Posterior)
+#Después (Momento Posterior)
 n1 <- 3
 a1 <- 1100
 p1 <- 1300
