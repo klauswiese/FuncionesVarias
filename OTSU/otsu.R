@@ -4,12 +4,12 @@
 #https://stackoverflow.com/questions/51116495/auto-thresholding-on-r-raster-object
 ##################################################################################
 
-#Library
+#Librarias
 library(raster)
 
-#Data
-OTSU <- funciton(X){#For a raster layer
-range <- range(X[])  # assuming values in the matrix range from 0 to 1
+#Algoritmo
+OTSU <- funciton(X){#X es una raster
+range <- range(X[])  # Los rangos de vslores van de 0 a 1
 levels <- 256L
 breaks <- seq(range[1], range[2], length.out = levels + 1)
 h <- hist.default(X[], breaks = breaks, plot = FALSE)
