@@ -9,7 +9,7 @@ if(file.exists("Sentinel") == FALSE) dir.create("Sentinel")#Carpeta para guardar
 #libraries
 library(raster)
 library(sf)
-source("~/R/SIG_Medina/Functions/Indices.R")
+source("~/R/SIG_Medina/Functions/Indices.R")#redefinir dirección
 
 #Área de trabajo
 Ainteres <- st_read("SHP/Linares32614.shp")
