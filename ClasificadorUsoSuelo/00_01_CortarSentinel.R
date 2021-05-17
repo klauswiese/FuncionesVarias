@@ -7,7 +7,7 @@ setwd("~/R/0_Linares/")
 if(file.exists("Sentinel") == FALSE) dir.create("Sentinel")#Carpeta para guardar resultados
 
 #libraries
-library(Sentinel2)
+library(Sentinel2)#paquete desarrollado en UPM
 library(sf)
 library(tmap)
 
