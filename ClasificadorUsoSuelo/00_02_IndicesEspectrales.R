@@ -37,6 +37,3 @@ names(IndicesEspectrales) <- c("AVI", "BSI", "NDMI", "NDVI", "NDWI", "NPCRI", "R
 #Guardar resultados
 writeRaster(IndicesEspectrales, file="Sentinel/IndicesEspectrales", overwrite=TRUE)
 plot(IndicesEspectrales)
-
-#Guardar el NDVI
-#writeRaster(NDVI, file="Sentinel/NDVI.tif")
