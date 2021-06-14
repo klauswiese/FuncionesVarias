@@ -12,7 +12,7 @@ library(rLandsat8)
 library(stringi)
 
 #Cargar capa PNLT
-PNLT <- shapefile("~/Dropbox/Gislatigra/Archivos Shp/Area_PNLT_Funez-Payin_WGS84.shp")
+#PNLT <- shapefile("~/Dropbox/Gislatigra/Archivos Shp/Area_PNLT_Funez-Payin_WGS84.shp")
 
 Folder <- "~/R/RFLaTigra/LC80180502014103LGN00"
 Folder2 <- data.frame(strsplit(Folder, "/"))
