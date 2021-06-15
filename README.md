@@ -1,2 +1,2 @@
 # FuncionesVarias
-Contiene varias funciones desarrollada por K. Wiese
+Contiene varias funciones desarrolladas por K. Wiese
