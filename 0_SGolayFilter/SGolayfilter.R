@@ -19,11 +19,12 @@ imagen <- stack("prueba2")
 # Número de núcleos, dejado dos para otros procesos
 no_cores <- detectCores() - 2
 
-# Función Savitzky-Golay para filtrar series de timepo 
-# m=differentiation order,p=polynomial order,w=window size (odd)
+# Función Savitzky-Golay para filtrar series de tiempo 
+# m = differentiation order,p = polynomial order,w = window size (odd)
+# m = orden de diferenciación, p = orden polinomial, w = tamano de ventana (impar)
 
 SpatialSGfilter <- function (TimeSeries, m, p, w, cores=2){
-  beginCluster(cores, type = "SOCK") #socket for one machine
+  beginCluster(cores, type = "SOCK") #socket para un sólo ordenador, pues es un 40% más rápido así. Se debe cambiar si se tiene un arreglo de ordenadores
   cl <- getCluster()
   clusterExport(cl, list('TimeSeries', 'm', 'p', 'w'), envir = environment())
   filt <- clusterR(TimeSeries,calc,args=list(fun=function(x) prospectr::savitzkyGolay(x,m,p,w)))
