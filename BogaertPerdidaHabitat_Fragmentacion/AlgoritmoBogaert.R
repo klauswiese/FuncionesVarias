@@ -9,7 +9,7 @@
 setwd("~/R/0_Fragmentacion/")
 
 #Antes (Momento inicial)
-n0 <- 2     #Número de parchos 
+n0 <- 2     #Número de teselas
 a0 <- 1250  #Área 
 p0 <- 1200  #Perimetro
 
