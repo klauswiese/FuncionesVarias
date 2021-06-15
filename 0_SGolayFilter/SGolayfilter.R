@@ -16,7 +16,7 @@ library(snow)
 #Cargar datos
 imagen <- stack("prueba2")
 
-# Número de núcleos
+# Número de núcleos, dejado dos para otros procesos
 no_cores <- detectCores() - 2
 
 # Función Savitzky-Golay para filtrar series de timepo 
