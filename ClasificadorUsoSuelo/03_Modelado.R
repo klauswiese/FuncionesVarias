@@ -14,7 +14,6 @@ library(pryr)
 
 ## Graficas
 # Definir la escala de color para las clases
-# Correspondientes a: "Agricultura" "Latifoliado" "Matorral" "Pino" "Suelo"
 cols <- c("orange", "darkorange" , 'blue' ,"dark green" ,
           "green", "seagreen", "darkseagreen", "limegreen", "lemonchiffon" , 'brown', 'red' )
 
@@ -30,6 +29,7 @@ Clasificacion <- c("Agricultura I",
                             "MET II",
                             "Suelo Desnudo",
                             "Urbano")
+
 #Datos que no logre guardar antes
 #cargar datos previos
 covs <- stack("TIFF/Variables.tif")
