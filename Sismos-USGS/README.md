@@ -1,4 +1,4 @@
-# Bienvenidos a Sismos-Chile
+# Bienvenidos a Sismos-USGS
 
 Esta aplicación muestra los últimos sismos en Chile
 Los datos fueron adquiridos de [Centro Sismológico de Chile](http://www.sismologia.cl)
