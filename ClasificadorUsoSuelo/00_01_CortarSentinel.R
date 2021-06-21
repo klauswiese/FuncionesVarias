@@ -3,7 +3,6 @@
 ####################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 if(file.exists("Sentinel") == FALSE) dir.create("Sentinel")#Carpeta para guardar resultados
 
 #libraries
@@ -12,7 +11,7 @@ library(sf)
 library(tmap)
 
 #Área de trabajo
-Ainteres <- st_read("SHP/Linares32614.shp")
+Ainteres <- st_read("SHP/AOI.shp")
 
 # map the location
 tmap_mode("view")
