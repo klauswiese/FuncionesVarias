@@ -6,7 +6,6 @@
 ############################################################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
 ## Librerias
 library(raster)
@@ -41,14 +40,7 @@ print(object_size(covmasked))
 
 mem_used()
 
-#Remove some images to get more usable ram
-# remove(covs)
-# remove(classes)
-
-
 #Cargar datos
-#classes <- stack("TIFF/classes.grd")
-#covmasked <- stack("TIFF/covmasked.grd")
 Linares <- shapefile("SHP/Linares.shp")
 Linares <- spTransform(Linares, CRSobj = crs(covmasked))
 
