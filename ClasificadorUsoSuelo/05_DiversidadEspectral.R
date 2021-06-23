@@ -4,7 +4,6 @@
 ##########################################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
 #Crear carpetas para almacenar resulatdos
 if(file.exists("CSV") == FALSE) dir.create("CSV")
