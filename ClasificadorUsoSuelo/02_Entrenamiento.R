@@ -19,13 +19,6 @@ covs <- stack("TIFF/Variables.tif")
 print(object_size(covs))
 
 
-# #RStoolbox
-# install.packages("RStoolbox")
-# library(RStoolbox)
-# 
-# #PCA
-# covsPCA <- rasterPCA(covs)
-
 #Cortar segun extent de el Chile
 Linares <- shapefile("SHP/Linares.shp")
 Linares <- spTransform(Linares, CRSobj = crs(covs))
