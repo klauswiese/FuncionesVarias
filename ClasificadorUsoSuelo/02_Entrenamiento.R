@@ -12,10 +12,8 @@
 library(raster)
 library(pryr)
 
-
 #Cargar capas
 covs <- stack("TIFF/Variables.tif")
-#covs <- covs[[c(3:5,7:13)]]
 print(object_size(covs))
 
 
