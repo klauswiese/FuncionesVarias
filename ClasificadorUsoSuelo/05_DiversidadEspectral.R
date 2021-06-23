@@ -20,13 +20,6 @@ source("Functions/SpectralRaoMarzo2019.R")
 #Cargar capas
 #mem_used()
 NDVI <- stack("TIFF/CorteRao.tif")[[6]]
-#names(Imagenes) <- c("B2", "B3", "B4", "B8")
-#Cálculo de Diversidad Espectral
-#DivLinares <- ContDiv(Imagenes[[4]], 5)#Tardo casi 6 horas
-#LinaresDiv <- stack(DivLinares)
-
-#Guardar resultados
-#writeRaster(LinaresDiv, filename = "TIFF/DivLinares")
 
 #Spectral RAO
 SpectralRAO <- spectralrao(NDVI, 
