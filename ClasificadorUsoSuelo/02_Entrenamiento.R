@@ -7,14 +7,11 @@
 #.rs.restartR()
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
 ## Librerias
 library(raster)
 library(pryr)
 
-#Configurar raster
-#rasterOptions(tmpdir = "~/R", chunksize = 1e+09, maxmemory = 4e+09)
 
 #Cargar capas
 covs <- stack("TIFF/Variables.tif")
