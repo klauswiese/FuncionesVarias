@@ -4,9 +4,7 @@
 ############################################################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
-rm(list=ls())
 ## Librerias
 library(raster)
 library(pryr)
