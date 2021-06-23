@@ -4,7 +4,6 @@
 ############################################################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
 ## Librerias
 library(raster)
@@ -18,7 +17,6 @@ source("Functions/Poligonize.R")
 ##Load data
 METclass <- raster("TIFF/RF_class.tiff_Entrenamiento7_TodasVar.grd")
 METclean <- shapefile("SHP/RF7clean5000/RF7clean5000.shp")
-#st_read("SHP/RF7clean5000/RF7clean5000.shp")
 
 ## Define the function
 #ini <- system.time()
