@@ -62,7 +62,6 @@ valuetable <- valuetable[,-1]
 # $ class : int  1 1 1 1 1 1 1 1 1 1 ...
 
 
-#########################################################################################
 #Split data
 set.seed(100)
 trainids <- createDataPartition(valuetable$class,list=FALSE,p=0.3)
