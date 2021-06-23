@@ -3,7 +3,6 @@
 #############################################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
 
 #Libraries
 library(raster)  
@@ -18,14 +17,6 @@ print(object_size(Imagenes))
 #Cortar segun extent de Linares
 Linares <- shapefile("SHP/Linares.shp")
 Linares <- spTransform(Linares, CRSobj = crs(Imagenes))
-
-#Graficar imagen
-#plotRGB(Imagenes, r=3,g=2,b=1,stretch="hist")
-#plot(Linares, add=TRUE)
-
-
-#Now we will prepare the data for the classifications. First we convert the raster data 
-#in a matrix, then we remove the NA-values.
 
 ## returns the values of the raster dataset and write them in a matrix. 
 v <- getValues(Imagenes)
