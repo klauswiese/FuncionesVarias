@@ -3,10 +3,6 @@
 ###################################
 
 #Definir directorio de trabajo
-setwd("~/R/0_Linares/")
-
-rm(list=ls())
-
 #Cargar datos
 Coberturas <- read.csv("CSV/Previous/RF_7clean10000Areas.csv")
 ## Add a customized legend
