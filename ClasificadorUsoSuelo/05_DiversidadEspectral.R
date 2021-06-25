@@ -10,8 +10,6 @@ if(file.exists("CSV") == FALSE) dir.create("CSV")
 if(file.exists("PNG") == FALSE) dir.create("PNG")
 if(file.exists("TIFF") == FALSE) dir.create("TIFF")
 
-rm(list=ls())
-
 
 #Libraries
 library(raster)
