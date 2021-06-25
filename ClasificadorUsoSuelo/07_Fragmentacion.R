@@ -6,10 +6,8 @@
 #---------------------------------------------------------
 
 #definir dirección de trabajo
-setwd("~/R/0_Linares/")
 
 #Librerias
-rm(list = ls())
 library(rgdal)
 library(rgeos)
 library(spdep)
@@ -22,10 +20,7 @@ library(sf)
 MET <- shapefile("SHP/MET.shp")
 MET_sf <- st_read("SHP/MET.shp")
 dim(MET_sf)
-#Simple feature collection with 3924 features and 2 fields
 
-#plot with tmap
-#tm_shape(nf_sf)  + tm_polygons("cat") + tm_borders()
 
 #1. Área y perímetro
 ####################
