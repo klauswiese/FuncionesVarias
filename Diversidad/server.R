@@ -294,9 +294,18 @@ Riqueza <-reactive({
   
   output$Djevenness <- renderPlot({
     if(!is.null(Jevenness()))
-      plot(Jevenness()$Jevenness, type="b", col="tomato", pch=16, lty=2, lwd=2, 
+      plot(Jevenness()$Jevenness, 
+           type="b", 
+           col="tomato", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Índice de Igualdad (evenness) de Shannon para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="Índice de Igualdad", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="Índice de Igualdad", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
