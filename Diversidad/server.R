@@ -76,8 +76,11 @@ shinyServer(function(input, output,session) {
     row.names(data1) <- Nombres
     
     data2 <- data.frame(Berger=NA)
+    
     for (i in 1:dim(data1)[1]) {
-      data2[i,] <- diversityresult(data1[i,], index = "Berger", method="pooled")
+      data2[i,] <- diversityresult(data1[i,], 
+                                   index = "Berger", 
+                                   method="pooled")
     }
     data2
   })
