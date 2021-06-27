@@ -250,9 +250,18 @@ Riqueza <-reactive({
 #--------------------------------------------------------------------
   output$Dberger <- renderPlot({
     if(!is.null(Berger()))
-      plot(Berger()$Berger, type="b", col="darkblue", pch=16, lty=2, lwd=2, 
+      plot(Berger()$Berger, 
+           type="b", 
+           col="darkblue", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Índice de Diversidad Berger-Parker para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="Índice Berger-Parker", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="Índice Berger-Parker", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
@@ -263,9 +272,18 @@ Riqueza <-reactive({
 
   output$Dlogalpha <- renderPlot({
     if(!is.null(Logalpha()))
-      plot(Logalpha()$Logalpha, type="b", col="yellowgreen", pch=16, lty=2, lwd=2, 
+      plot(Logalpha()$Logalpha, 
+           type="b", 
+           col="yellowgreen", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Serie Logarítmica de Diversidad Alpha para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="Índice log alpha", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="Índice log alpha", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
