@@ -4,7 +4,7 @@
 #https://stackoverflow.com/questions/51116495/auto-thresholding-on-r-raster-object
 ##################################################################################
 
-#Librarias
+#Librerias
 library(raster)
 
 #Algoritmo
