@@ -95,7 +95,9 @@ shinyServer(function(input, output,session) {
     
     data2 <- data.frame(Logalpha=NA)
     for (i in 1:dim(data1)[1]) {
-      data2[i,] <- diversityresult(data1[i,], index = "Logalpha", method="pooled")
+      data2[i,] <- diversityresult(data1[i,], 
+                                   index = "Logalpha", 
+                                   method="pooled")
     }
     data2
   })
@@ -113,7 +115,9 @@ shinyServer(function(input, output,session) {
     
     data2 <- data.frame(Jevenness=NA)
     for (i in 1:dim(data1)[1]) {
-      data2[i,] <- diversityresult(data1[i,], index = "Jevenness", method="pooled")
+      data2[i,] <- diversityresult(data1[i,], 
+                                   index = "Jevenness", 
+                                   method="pooled")
     }
     data2
   })
@@ -130,9 +134,15 @@ Riqueza <-reactive({
     data <- data[,2:dim(data)[2]]
     row.names(data) <- Nombres
     data <- specpool(data)
-    names(data) <- c("# de Especies", "Chao", "Error Estándar Chao", 
-                     "Jackknife 1", "Error Estándar Jackknife 1", "Jackknife 2",
-                     "Bootstrap", "Error Estándar Bootstrap", "Número de Unidades de Muestreo")
+    names(data) <- c("# de Especies", 
+                     "Chao", 
+                     "Error Estándar Chao", 
+                     "Jackknife 1", 
+                     "Error Estándar Jackknife 1", 
+                     "Jackknife 2",
+                     "Bootstrap", 
+                     "Error Estándar Bootstrap", 
+                     "Número de Unidades de Muestreo")
     row.names(data) <- "Todos"
     data
   })
@@ -148,15 +158,40 @@ Riqueza <-reactive({
     data <- data[,2:dim(data)[2]]
     row.names(data) <- Nombres
     Riqueza <- specnumber(colSums(data))
-    Shannon <- diversity(rowSums(data), "shannon")
-    Simpson <- diversity(rowSums(data), "simpson")
-    Simpson_Inverso <- diversity(rowSums(data), "invsimpson")
-    Logalpha <- diversityresult(data, index = "Logalpha", method="pooled")
-    Berger_Parker <- diversityresult(data, index = "Berger", method="pooled")
-    Igualdad_Shannon <- diversityresult(data, index = "Jevenness", method="pooled")
-    Igualdad_Shannon_2 <- diversityresult(data, index = "Eevenness", method="pooled")
-    data <- cbind(Riqueza, Shannon, Simpson, Simpson_Inverso, Logalpha, Berger_Parker,
-                  Igualdad_Shannon, Igualdad_Shannon_2)
+    
+    Shannon <- diversity(rowSums(data), 
+                         "shannon")
+    
+    Simpson <- diversity(rowSums(data), 
+                         "simpson")
+    
+    Simpson_Inverso <- diversity(rowSums(data), 
+                                 "invsimpson")
+    
+    Logalpha <- diversityresult(data, 
+                                index = "Logalpha", 
+                                method="pooled")
+    
+    Berger_Parker <- diversityresult(data, 
+                                     index = "Berger", 
+                                     method="pooled")
+    
+    Igualdad_Shannon <- diversityresult(data, 
+                                        index = "Jevenness", 
+                                        method="pooled")
+    
+    Igualdad_Shannon_2 <- diversityresult(data, 
+                                          index = "Eevenness", 
+                                          method="pooled")
+    
+    data <- cbind(Riqueza, 
+                  Shannon, 
+                  Simpson, 
+                  Simpson_Inverso, 
+                  Logalpha, 
+                  Berger_Parker,
+                  Igualdad_Shannon, 
+                  Igualdad_Shannon_2)
     row.names(data) <- "Piscina General (pooled)"
     data
   })
