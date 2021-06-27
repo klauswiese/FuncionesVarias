@@ -17,7 +17,7 @@ shinyServer(function(input, output,session) {
   Curva <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data<-read.csv(input$datafile$datapath)
+    data <- read.csv(input$datafile$datapath)
     Nombres <- data[,1]
     data <- data[,2:dim(data)[2]]
     row.names(data) <- Nombres
@@ -30,7 +30,7 @@ shinyServer(function(input, output,session) {
     Shanon <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -43,7 +43,7 @@ shinyServer(function(input, output,session) {
   Simpson <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -56,7 +56,7 @@ shinyServer(function(input, output,session) {
   SimpsonInv <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -70,7 +70,7 @@ shinyServer(function(input, output,session) {
   Berger <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -88,7 +88,7 @@ shinyServer(function(input, output,session) {
   Logalpha <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -106,7 +106,7 @@ shinyServer(function(input, output,session) {
   Jevenness <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data1<-read.csv(input$datafile$datapath)
+    data1 <- read.csv(input$datafile$datapath)
     Nombres <- data1[,1]
     data1 <- data1[,2:dim(data1)[2]]
     row.names(data1) <- Nombres
@@ -125,7 +125,7 @@ shinyServer(function(input, output,session) {
 Riqueza <-reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data<-read.csv(input$datafile$datapath)
+    data <- read.csv(input$datafile$datapath)
     Nombres <- data[,1]
     data <- data[,2:dim(data)[2]]
     row.names(data) <- Nombres
@@ -143,7 +143,7 @@ Riqueza <-reactive({
   Diversidad <- reactive({
     if (is.null(input$datafile))
       return(NULL)                
-    data<-read.csv(input$datafile$datapath)
+    data <- read.csv(input$datafile$datapath)
     Nombres <- data[,1]
     data <- data[,2:dim(data)[2]]
     row.names(data) <- Nombres
@@ -165,13 +165,19 @@ Riqueza <-reactive({
 #2. Gráficar datos#
 ###################
   
-#Graficá la curva de acumualción de especies, asignando el objeto a la variables 
+#Grafica la curva de acumulación de especies, asignando el objeto a la variables 
 #Acumulacion
 #-------------------------------------------------------------------------------
   output$Acumulacion <- renderPlot({
      if(!is.null(Curva()))
-  plot(Curva(), col="red", xlab="Esfuerzo", ylab="# de Especies", 
-       main="Curva de Acumulación de Especies", cex.lab=1.5, cex=1.5, cex.main=2)
+  plot(Curva(), 
+       col="red", 
+       xlab="Esfuerzo", 
+       ylab="# de Especies", 
+       main="Curva de Acumulación de Especies", 
+       cex.lab=1.5, 
+       cex=1.5, 
+       cex.main=2)
   grid(col="black")
   box()
    })
@@ -181,9 +187,18 @@ Riqueza <-reactive({
 #--------------------------------------------------------------
   output$Dshannon <- renderPlot({
     if(!is.null(Shanon()))
-      plot(Shanon(), type="b", col="darkgreen", pch=16, lty=2, lwd=2, 
+      plot(Shanon(), 
+           type="b", 
+           col="darkgreen", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Índice de Diversidad de Shannon-Wiener para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="H'", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="H'", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
@@ -193,9 +208,18 @@ Riqueza <-reactive({
 #--------------------------------------------------------------
   output$Dsimpson <- renderPlot({
     if(!is.null(Simpson()))
-      plot(Simpson(), type="b", col="orange", pch=16, lty=2, lwd=2, 
+      plot(Simpson(), 
+           type="b", 
+           col="orange", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Índice de Diversidad Simpson para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="Índice de Simpson", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="Índice de Simpson", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
@@ -205,9 +229,18 @@ Riqueza <-reactive({
 #----------------------------------------------------------------------
   output$Dinvsimpson <- renderPlot({
     if(!is.null(SimpsonInv()))
-      plot(SimpsonInv(), type="b", col="seagreen", pch=16, lty=2, lwd=2, 
+      plot(SimpsonInv(), 
+           type="b", 
+           col="seagreen", 
+           pch=16, 
+           lty=2, 
+           lwd=2, 
            main = "Índice de Diversidad Simpson Inverso para cada Unidad de Muestreo",
-           xlab = "Unidad de Muestreo", ylab="Índice Simpson Inverso", cex.lab=1.5, cex=1.5, cex.main=2)
+           xlab = "Unidad de Muestreo", 
+           ylab="Índice Simpson Inverso", 
+           cex.lab=1.5, 
+           cex=1.5, 
+           cex.main=2)
     grid(col="black")
     box()
   })
