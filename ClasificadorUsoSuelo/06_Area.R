@@ -17,7 +17,8 @@ Clasificacion <- c("Agricultura I",
                    "MET II",
                    "Suelo Desnudo",
                    "Urbano")
-cols <- c("orange", "darkorange" , 'blue' ,"dark green" ,
+cols <- c("orange", 
+          "darkorange" , 'blue' ,"dark green" ,
           "green", "seagreen", "darkseagreen", "limegreen", "lemonchiffon" , 'brown', 'red' )
 
 
@@ -44,9 +45,15 @@ dev.off()
 
 #Reclasificar datos para agrupar
 AreaCoberturas$Reclass <- c(1,1,2,3,3,4,5,6,7,8,9)
-nombresReclass <- c("Agricultura", "Agua", "Bosque", 
-                    "Humedal", "Matorral Submontano", 
-                    "MET", "MET II", "Suelo Desnudo", "Urbano")
+nombresReclass <- c("Agricultura", 
+                    "Agua", 
+                    "Bosque", 
+                    "Humedal", 
+                    "Matorral Submontano", 
+                    "MET", 
+                    "MET II", 
+                    "Suelo Desnudo", 
+                    "Urbano")
 
 AreaReclass <- tapply(AreaCoberturas$Porcentaje, AreaCoberturas$Reclass, sum)
 
