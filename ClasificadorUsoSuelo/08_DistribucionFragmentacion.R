@@ -3,8 +3,6 @@
 #---------------------------------------------------------
 
 #definir dirección de trabajo
-setwd("~/R/0_Linares/")
-
 #Libraries
 library(sf)
 library(raster)
@@ -22,4 +20,5 @@ FragMetrics2 <- read.csv("CSV/EstClaseMET_todosPoly.csv")
 
 #Join data Fragments and its metrics
 ####################################
-Fragments <- FragMetrics2 %>% left_join(MET_sf, by = "NAME")
+Fragments <- FragMetrics2 %>% 
+                left_join(MET_sf, by = "NAME")
