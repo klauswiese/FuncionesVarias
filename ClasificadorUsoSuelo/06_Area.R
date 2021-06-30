@@ -5,6 +5,7 @@
 #Definir directorio de trabajo
 #Cargar datos
 Coberturas <- read.csv("CSV/Previous/RF_7clean10000Areas.csv")
+
 ## Add a customized legend
 Clasificacion <- c("Agricultura I",
                    "Agricultura II",
@@ -18,8 +19,16 @@ Clasificacion <- c("Agricultura I",
                    "Suelo Desnudo",
                    "Urbano")
 cols <- c("orange", 
-          "darkorange" , 'blue' ,"dark green" ,
-          "green", "seagreen", "darkseagreen", "limegreen", "lemonchiffon" , 'brown', 'red' )
+          "darkorange" , 
+          'blue' ,
+          "dark green" ,
+          "green", 
+          "seagreen", 
+          "darkseagreen", 
+          "limegreen", 
+          "lemonchiffon" , 
+          'brown', 
+          'red' )
 
 
 #Calcular áreas por DN
