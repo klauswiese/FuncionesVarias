@@ -14,11 +14,17 @@ library(devtools)
 if(!('reprtree' %in% installed.packages())){
   install_github('araastat/reprtree')
 }
+
 for(p in c(cran.packages, 'reprtree')) eval(substitute(library(pkg), list(pkg=p)))
 
 data("iris")
 
 #Correr el modelo
-model <- randomForest(Species ~ ., data=iris, importance=TRUE, ntree=500, do.trace=100)#, mtry = 3
+model <- randomForest(Species ~ ., 
+                      data=iris, 
+                      importance=TRUE, 
+                      ntree=500, 
+                      do.trace=100)#, mtry = 3
+
 reprtree:::plot.getTree(model)
 
