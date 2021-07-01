@@ -2,10 +2,7 @@
 #Mayo 2019
 ###############################################################
 
-#Definri directorio de trabajo
-setwd("~/R/0_SGolayFilter")
-
-
+#Definir directorio de trabajo
 #Librerias
 library(raster)
 rasterOptions(progress = "text")
@@ -39,15 +36,4 @@ print(Sys.time() - ini)
 
 #Guardar resultado
 writeRaster(imagenfilt, filename="imagenfilt.tif")
-
-
-
-
-
-
-
-
-
-
-
 
