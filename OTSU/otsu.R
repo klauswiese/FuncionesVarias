@@ -1,5 +1,5 @@
 #OTSU algorithm
-#Auto thresholding
+#Automatic thresholding
 #K. Wiese 23 de abril 2019
 #https://stackoverflow.com/questions/51116495/auto-thresholding-on-r-raster-object
 ##################################################################################
