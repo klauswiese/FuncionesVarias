@@ -8,7 +8,7 @@
 library(raster)
 
 #Algoritmo
-OTSU <- funciton(X){#X es una raster
+OTSU <- function(X){#X es una raster
 range <- range(X[])  # Los rangos de valores van de 0 a 1
 levels <- 256L
 breaks <- seq(range[1], range[2], length.out = levels + 1)
